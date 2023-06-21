@@ -1,0 +1,90 @@
+@charset "EUC-KR";
+
+.font-underline {
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+    z-index: 5;
+	display: inline-block;
+	position: relative;
+    left: 160px;
+    top: 60px;
+}
+
+.font-underline::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -5px;
+	width: 100%;
+	height: 4px;
+	background-color: blue;
+}
+
+#test_1{
+    position: relative;
+    width: 1200px;
+    height: 130px;
+    background-image: url('../images/topBanner.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#test_2{
+    width: 1200px;
+    height:50px;
+    /* background-color: brown; */
+    padding-top: 10px;
+    padding-left: 40px;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#test_3{
+    width: 1200px;
+    height: auto;
+    /* background-color: darkturquoise; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.searchResult{
+    font-size: 13px;
+    float: left;
+    width: 900px;
+    height: 200px;
+    /* background-color: lightskyblue; */
+}
+#result{
+	width:800px;
+	height:200px;
+    background-color: lightskyblue;
+    margin-bottom:20px;
+}
+
+
+.sch_cont3_c>ul>li{
+	height:26px;
+    box-sizing: border-box;
+    padding-top:5px;
+    padding-left: 10px;
+    margin-bottom: 2px;
+    /* background-color: lightgray; */
+    font-size:15px;
+}
+
+#test_4{
+    width: 1200px;
+    height: auto;
+    background-color: yellow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+
+

@@ -1,0 +1,113 @@
+@charset "EUC-KR";
+
+.font-underline {
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+    z-index: 5;
+	display: inline-block;
+	position: relative;
+    left: 160px;
+    top: 60px;
+}
+
+.font-underline::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -5px;
+	width: 100%;
+	height: 4px;
+	background-color: blue;
+}
+
+#rental_1{
+    position: relative;
+    width: 1200px;
+    height: 130px;
+    background-image: url('../images/topBanner.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#rental_2{
+    width: 1200px;
+    height:50px;
+    /* background-color: brown; */
+    padding-top: 10px;
+    padding-left: 40px;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#rental_3{
+    width: 1200px;
+    height: auto;
+    /* background-color: darkturquoise; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+#rental_contents{
+	width:80%;
+	height:auto;
+}
+
+#rental_con1{
+	width:100%;
+	height:50px;
+	text-align:center;
+	margin-bottom:30px;
+}
+#rental_con1>h4 {
+	float: right;
+	padding-right:20px;
+}
+
+#rental_con2{
+	width:100%;
+	height: auto;
+	margin-bottom:40px;
+}
+
+.rental_info{
+	width:100%;
+	text-align:center;
+	border-top: 2px solid #000000;
+}
+
+.rental_title{
+	height: 45px;
+
+}
+.rental_title th {
+    border-bottom: 1px solid #000000;
+}
+
+.rental_list {
+	height: 40px;
+
+}
+
+
+#rental_con3{
+	width:100%;
+	text-align:center;
+}
+
+/*  */
+#rental_4{
+    width: 1200px;
+    height: auto;
+    /* background-color: yellow; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+
+

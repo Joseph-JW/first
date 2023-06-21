@@ -1,0 +1,142 @@
+@charset "EUC-KR";
+a {
+ 	color:black;
+	text-decoration : none; 
+}
+.font-underline {
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+    z-index: 5;
+	display: inline-block;
+	position: relative;
+    left: 160px;
+    top: 60px;
+}
+
+.font-underline::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -5px;
+	width: 100%;
+	height: 4px;
+	background-color: blue;
+}
+
+#book_1{
+    position: relative;
+    width: 1200px;
+    height: 130px;
+    background-image: url('../images/topBanner.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#book_2{
+    width: 1200px;
+    height:50px;
+    /* background-color: brown; */
+    padding-top: 10px;
+    padding-left: 40px;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#book_3{
+    width: 1200px;
+    height: auto;
+    /* background-color: darkturquoise; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+#book3_co1{
+    width: 1200px;
+    height: auto;
+    /* background-color: deeppink; */
+}
+#co1_ul {
+    position: relative;
+    left: 50px;
+    top: 10px;
+}
+.co1_ab{
+   width: 1100px;
+    height: 200px;
+    /* background-color: rgb(190, 252, 190); */
+    margin-bottom: 20px;
+ 	border:1px solid lightgrey;
+ 	overflow: hidden; 
+}
+.bookList_cont3_a{
+    float: left;
+    width: 50px;
+    height: 200px;
+    /* background-color: lightpink; */
+   
+}
+.bookList_cont3_a>input{
+    position: relative;
+    top: 18px;
+    left: 18px;
+}
+.bookList_cont3_b{
+    float: left;
+    width: 150px;
+    height: 200px;
+    /* background-color: lemonchiffon; */
+    padding-top: 20px;
+    padding-left:10px;
+    box-sizing:border-box;
+}
+.bookImg{
+	height:153px;
+}
+
+.bookList_cont3_b>button{
+	height:20px;
+	position: relative;
+    left: 20px;
+}
+.bookList_cont3_c{
+    font-size: 13px;
+    float: left;
+    width: 900px;
+    height: 200px;
+    /* background-color: lightskyblue; */
+}
+.bookList_cont3_c>ul>li{
+	height:26px;
+    box-sizing: border-box;
+    padding-top:5px;
+    padding-left: 10px;
+    margin-bottom: 2px;
+    /* background-color: lightgray; */
+    font-size:15px;
+}
+
+
+
+
+/*  */
+#book_4{
+    width: 1200px;
+    height: auto;
+  /*   background-color: yellow; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+
+.pagination > li {
+  display: inline-block;
+  padding-left: 10px;
+}
+
+

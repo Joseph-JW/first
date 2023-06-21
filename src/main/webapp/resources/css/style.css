@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+ul{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+#wrap{
+    width: 1200px;
+    height: auto;
+/*     background-color: aqua;
+ */    margin: 0 auto;
+}
+#header{
+    width: 1200px;
+    height: 150px;
+    /* background-color: aquamarine; */
+	margin:0 auto;
+}
+#contents{
+    width: 1200px;
+    height: 100%;
+/*     background-color: antiquewhite;
+ */	margin:0 auto;
+ 
+ }
+#footer{
+    width: 1200px;
+    height: 145px;
+/*     background-color: brown;
+ */	margin:0 auto;
+ 
+}
+
+hr{
+	color: lightgray;
+	
+}

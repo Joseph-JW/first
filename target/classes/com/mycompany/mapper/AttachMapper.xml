@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mycompany.mapper.AttachMapper">
+	<insert id="insert">
+		insert into tbl_attach (uuid, uploadpath, filename, filetype, isbn) 
+			values (#{uuid}, #{uploadpath}, #{filename}, #{filetype}, #{isbn})
+	</insert>
+	
+	<update id="update">
+		update tbl_attach set title = #{title}, content=#{content} where bno = #{bno}
+	</update>
+
+	<select id="findByIsbn" resultType="com.mycompany.domain.AttachVO">
+		select * from tbl_attach where isbn = #{isbn}
+	</select>
+</mapper>

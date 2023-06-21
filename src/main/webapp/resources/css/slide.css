@@ -1,0 +1,132 @@
+#slide{
+    width: 1200px;
+    height: 400px;
+/*     background-color: coral;
+ */}
+#top-sl{
+    float: left;
+    width: 1200px;
+    height: 300px;
+    background-color: lightblue;
+    font-size: 25px;
+}
+#top-sl>img{
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+#top-sl>p{
+    position: relative;
+    top: -260px;
+    left: 80px;
+    animation: slide 1s ease-in-out;    /* slide 키프레임을 n초만에 입력,  ease-in-out은 smooth하게 들어옴 */
+    
+}
+#top-sl>p>span{
+    font-weight: bold;
+    color:darkblue;
+}
+
+@keyframes slide {
+    from{
+        left: -100px;
+        opacity: 0;
+    }
+    to{
+        left: 80px;
+        opacity: 1;
+    }
+}
+
+@keyframes disappear {
+    from{
+        left: 80px;
+        opacity: 1;
+    }
+    to{
+        left: -100px;
+        opacity: 0;
+    }
+}
+
+
+#tot-srh{
+    position: relative;
+    left: 60px;
+    top: -200px;
+    width: 450px;
+    height: 50px;
+    background-color:darkcyan;
+    z-index: 5px;
+}
+#tot-srh>p{
+    float: left;
+    font-size: 15px;
+    color: white;
+    padding-top: 15px;
+    padding-left: 16px;
+}
+#tot-srh>#tot-srh_box{
+    float: left;
+    position: relative;
+    width: 314px;
+    height: 38px;
+    left: 20px;
+    top: 6px;
+    z-index: 0;
+    border: none;
+}
+.tot-srh_btn{
+    position: relative;
+    width: 33px;
+    height: 33px;
+    top: -28px;
+    left: 405px;
+    background-image: url(../images/search-btn.png);
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white;
+    border: none;
+    z-index: 10;
+}
+
+#bot-sl{
+    float: left;
+    width: 1200px;
+    height: 100px;
+/*     background-color: crimson;
+*/}
+#bot-sl>ul{
+    position: relative;
+    top: -2px; 
+    left: 100px;
+}
+#bot-sl>ul>li{
+    display: inline-block;
+    width: 70px;
+/*     background-color: beige;
+ */    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 5px;
+    margin-right: 60px;
+    vertical-align: top;
+}
+.quick_menu{
+    width: 65px;
+    height: 65px;
+    background-color: lightblue;
+    margin-bottom: 1px;
+    border-radius: 100%;
+}
+.quick_menu>a>img{
+    width: 80%;
+    height: 80%;
+    padding-top: 5px;
+    padding-left: 2px;
+}
+#bot-sl>ul>li>a{
+    color: black;
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mycompany.mapper.RentalMapper">
+	<insert id="insert">
+		insert into tbl_rental (isbn, booktitle, userid) values (#{isbn}, #{booktitle}, #{userid})
+		<selectKey keyProperty="isbn" resultType="Long" order="BEFORE">
+			select isbn from tbl_book where booktitle = #{booktitle}
+		</selectKey> 
+	</insert>
+	
+	<select id="get" resultType="com.mycompany.domain.RentalVO">
+		select * from tbl_rental where userid = #{userid}
+		
+	</select>
+	
+	<select id="getList" resultType="com.mycompany.domain.RentalVO">
+		select brcode, isbn, booktitle, userid, brdate, duedate, state 
+			from tbl_rental
+	</select>
+	
+	<update id="update">
+		update tbl_rental set state = #{state}, duedate = sysdate
+			where brcode = #{brcode}
+	</update>
+	
+	<delete id="delete">
+		delete from tbl_rental where brcode = #{brcode}
+	</delete>
+	<!-- brcode, isbn, userid, brdate, duedate, state,,,,tbl_book_seq.nextval -->
+	
+	<select id="getTotalCount" resultType="int">
+		select count(*) from tbl_rental
+	</select>
+</mapper>
