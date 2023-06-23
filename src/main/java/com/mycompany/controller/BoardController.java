@@ -100,8 +100,8 @@ public class BoardController {
 	// 제목 검색
 	@ResponseBody
 	@GetMapping(value = "/searchBook", produces = {MediaType.APPLICATION_JSON_VALUE})
-	public ResponseEntity<List<BookVO>> searchBooksByTitle(@RequestParam("keyword") String keyword) {
-	  List<BookVO> books = bookService.searchBooksByTitle(keyword);
+	public ResponseEntity<List<BookVO>> searchBooksByTitle(@RequestParam("title") String title) {
+	  List<BookVO> books = bookService.searchBooksByTitle(title);
 	  return new ResponseEntity<>(books, HttpStatus.OK);
 	}
 

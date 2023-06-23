@@ -67,7 +67,7 @@ $(function() {
 							</a>
 						</li>
 						<li>
-							<a href="#">아이디찾기
+							<a href="/member/findId">아이디찾기
 								<span class="bar">&nbsp;&nbsp;|</span>
 							</a>
 						</li>

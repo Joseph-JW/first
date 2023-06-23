@@ -54,7 +54,7 @@
 
 	<select id="searchBooksByTitle" resultType="com.mycompany.domain.BookVO">
         SELECT isbn, booktitle, bookwriter, publication, possession, publicationdate, genre, available 
-        	FROM tbl_book WHERE booktitle LIKE '%' || #{keyword} || '%'
+        	FROM tbl_book WHERE booktitle LIKE '%' || #{title} || '%'
     </select>
     
    <!--  <select id="searchBooks" resultType="com.mycompany.domain.BookVO">

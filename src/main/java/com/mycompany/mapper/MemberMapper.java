@@ -7,4 +7,5 @@ public interface MemberMapper {
 	public MemberVO selectMemberByUserid(String userid);
 	public int update(MemberVO vo);
 	public int delete(String userid);
+	public MemberVO findId(String username, String phone);
 }

@@ -10,12 +10,12 @@
 $(function() {
 	$("#searchForm").submit(function(event) {
 		event.preventDefault(); // 폼의 기본 동작 중단
-	 	var keyword = $("#keyword").val();
+	 	var title = $("#title").val();
 
 		$.ajax({
 			type: "GET",
 			url: "/board/searchBook",
-			data: { keyword: keyword },
+			data: { title: title },
 			success: function(data) {
 				console.log(data)
 				handleSearchResult(data);
@@ -120,16 +120,16 @@ $(function() {
                 <div id="search2_box1">
                     <span>자료검색</span><br>
                     <div id="search2__schBox">
-                        <input type="text" id="keyword" name="keyword" placeholder="  도서 제목을 입력하세요">
+                        <input type="text" id="title" name="title" placeholder="도서 제목을 입력하세요">
                     </div>
                 </div>
                 <div id="search2_box2">
                     <ul>
                         <li>저 자 
-                            <input type="text" class="list">
+                            <input type="text" class="list" id="key_writer" name="key_writer">
                         </li>
-                        <li>키워드
-                            <input type="text" class="list">
+                        <li>도서관
+                            <input type="text" class="list" id="key_library" name="key_library">
 
                         </li>
                         <li>장르

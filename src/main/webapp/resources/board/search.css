@@ -77,6 +77,8 @@
 #search2__schBox>input{
     width: 760px;
     height: 60px;
+	box-sizing: border-box;    
+	padding-left:20px;
 }
 
 #search2_box2{
@@ -167,8 +169,8 @@
     color: white;
     text-align: center;
     box-sizing: border-box;
-    padding-top: 5px;
     margin-right: 8px;
+    font-size: 17px;
 }
 #sch_bot2{
     float: left;

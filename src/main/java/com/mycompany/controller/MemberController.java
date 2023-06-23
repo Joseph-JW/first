@@ -4,6 +4,7 @@ package com.mycompany.controller;
 
 import javax.servlet.http.HttpSession;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -134,5 +135,23 @@ public class MemberController {
 		session.removeAttribute("auth");
 		rttr.addFlashAttribute("msg", "logout");
 		return "redirect:/";
+	}
+	
+	@GetMapping("/findId")
+	public String findIdForm() {
+		return "/member/findForm";
+	}
+	
+	@PostMapping("/findId")
+	public String findId(@Param("param1") String username, @Param("param2") String phone, Model model) {
+		MemberVO member = memberService.findId(username, phone);
+		if(member == null) {
+			model.addAttribute("check", 1);
+		} else {
+			model.addAttribute("check", 0);
+			model.addAttribute("userid", member.getUserid());
+		}
+		
+		return "redirect:/member/findId";
 	}
 }

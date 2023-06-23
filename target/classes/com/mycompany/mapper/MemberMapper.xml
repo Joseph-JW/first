@@ -34,6 +34,10 @@
 		delete from tbl_member where userid = #{userid}
 	</delete>
 	
+	<select id="findId" resultType="com.mycompany.domain.MemberVO">
+		select * from tbl_member where username = #{param1} and phone = #{param2}
+	</select>
+	
 	<!-- <select id="getList" resultType="com.mycompany.domain.MemberVO">
 		
 	</select> -->

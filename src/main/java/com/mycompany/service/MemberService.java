@@ -54,4 +54,8 @@ public class MemberService {
 		return mapper.delete(userid) == 1;
 	}
 	
+	public MemberVO findId(String username, String phone) {
+		return mapper.findId(username, phone);
+	}
+	
 }

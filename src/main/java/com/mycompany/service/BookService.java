@@ -60,8 +60,8 @@ public class BookService {
 	}
 	
 	//검색
-	public List<BookVO> searchBooksByTitle(String keyword) {
-        return mapper.searchBooksByTitle(keyword);
+	public List<BookVO> searchBooksByTitle(String title) {
+        return mapper.searchBooksByTitle(title);
     }
 
 	// paging

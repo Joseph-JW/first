@@ -15,7 +15,7 @@ public interface BookMapper {
 	public BookVO getIsbn(String booktitle);
 	public List<BookVO> getListDesc();
 	
-	public List<BookVO> searchBooksByTitle(String keyword);
+	public List<BookVO> searchBooksByTitle(String title);
 	
 	
 	public List<BookVO> getListWithPaging(Criteria criteria);
