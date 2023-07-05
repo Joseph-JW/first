@@ -139,7 +139,7 @@ public class MemberController {
 	
 	@GetMapping("/findId")
 	public String findIdForm() {
-		return "/member/findForm";
+		return "/member/findIdForm";
 	}
 	
 	@PostMapping("/findId")
@@ -152,6 +152,34 @@ public class MemberController {
 			model.addAttribute("userid", member.getUserid());
 		}
 		
-		return "redirect:/member/findId";
+		return "/member/findId";
+	}
+	
+	@GetMapping("/findPw")
+	public String findPwForm() {
+		return "/member/findPwForm";
+	}
+	
+	@PostMapping("/findPw")
+	public String findPw(MemberVO vo, Model model) {
+		MemberVO member = memberService.selectForFindPw(vo);
+		if(member != null) {
+			model.addAttribute("member", member);
+			return "/member/newPw";
+		} else {
+			model.addAttribute("fail", "일치하는 회원 정보가 존재하지 않습니다");
+			return "redirect:/member/findPw";
+		}
+	}
+	
+	@PostMapping("/modifyPw")
+	public String modifyPw(MemberVO vo, Model model, HttpSession session) {
+		memberService.modifyPw(vo);
+		try {
+			vo.setUserpw(vo.getUserpw());
+			memberService.authenticate(vo);
+		} catch (Exception e) {			
+		}
+		return "redirect:/member/login";
 	}
 }

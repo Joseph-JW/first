@@ -35,8 +35,17 @@
 	</delete>
 	
 	<select id="findId" resultType="com.mycompany.domain.MemberVO">
-		select * from tbl_member where username = #{param1} and phone = #{param2}
+		select userid from tbl_member where username = #{param1} and phone = #{param2}
 	</select>
+	
+	
+	<select id="selectForFindPw" resultType="com.mycompany.domain.MemberVO">
+		select * from tbl_member where userid = #{userid} and username = #{username} and phone = #{phone}
+	</select>
+	
+	<update id="updatePw">
+		update tbl_member set userpw = #{userpw} where userid = #{userid} 
+	</update>
 	
 	<!-- <select id="getList" resultType="com.mycompany.domain.MemberVO">
 		

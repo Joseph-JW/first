@@ -4,10 +4,15 @@ package com.mycompany.config;
 
 import javax.servlet.Filter;
 import javax.servlet.MultipartConfigElement;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletRegistration;
 
+import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.filter.CharacterEncodingFilter;
+import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+
+import com.mycompany.interceptor.AuthCheckInterceptor;
 
 public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitializer {
 	@Override
@@ -44,6 +49,6 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
 		registration.setMultipartConfig(multipartConfig);
 	}
 	
-	
+
 	
 }

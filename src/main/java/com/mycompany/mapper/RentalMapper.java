@@ -11,4 +11,5 @@ public interface RentalMapper {
 	public int update(RentalVO vo);
 	public int delete(Long brcode);
 	public int getTotalCount();
+	public String getState(Long isbn);
 }

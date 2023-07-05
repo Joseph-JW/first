@@ -24,9 +24,10 @@ $(function() {
 		txt = "로그아웃 되었습니다.";
 	}
 	alert(txt);
-		
 	
+
 })	//close
+
 </script>
 
 </head>
@@ -72,7 +73,7 @@ $(function() {
 							</a>
 						</li>
 						<li>
-							<a href="#">비밀번호찾기
+							<a href="/member/findPw">비밀번호찾기
 		  						<span class="bar">&nbsp;&nbsp;|</span>
 							</a>
 						</li>

@@ -58,4 +58,13 @@ public class MemberService {
 		return mapper.findId(username, phone);
 	}
 	
+	public MemberVO selectForFindPw(MemberVO vo) {
+		return mapper.selectForFindPw(vo);
+	}
+	
+	public boolean modifyPw(MemberVO vo) {
+		vo.setUserpw(pwEncoder.encode(vo.getUserpw()));
+		return mapper.updatePw(vo) == 1;
+	}
+	
 }

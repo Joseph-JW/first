@@ -2,12 +2,24 @@
 <!DOCTYPE mapper
 	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.mycompany.mapper.RentalMapper">
-	<select id="get" resultType="com.mycompany.domain.RentalVO">
-		select * from tbl_rental where userid = #{userid}
-		
-	</select>
+<mapper namespace="com.mycompany.mapper.HistoryMapper">
+	<insert id="insert" parameterType="com.mycompany.domain.HistoryVO">
+        insert into tbl_rentalhistory (isbn, userid)
+        values (#{isbn}, #{userid})
+<!-- 		<selectKey keyProperty="brcode" resultType="Long" order="BEFORE">
+			select brcode from (
+				SELECT brcode 
+				FROM tbl_rental 
+				where isbn = #{isbn} and userid = #{userid} 
+				ORDER BY brcode DESC)
+				WHERE ROWNUM = 1
+		</selectKey> -->
+    </insert>
 
+	<update id="update">
+		update tbl_rentalhistory set duedate = #{duedate}
+			where brcode = #{brcode}
+	</update>
 
 <!-- 	<insert id="insert">
 		insert into tbl_rental (isbn, booktitle, userid) values (#{isbn}, #{booktitle}, #{userid})

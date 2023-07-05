@@ -197,7 +197,7 @@ $(document).ready(function() {
 	                    </li>
 	                    <li>출판일
 	                        <input type="date" class="title_area1" id="publication" name="publicationdate" required="required">
-	                    	<input type="hidden"  id="publicationdate"/>
+	                    	<!-- <input type="hidden"  id="publicationdate"/> -->
 	                    </li>
 	                    <li>장르
 	                    	<select class="title_area1" id="genre" name="genre" required="required">

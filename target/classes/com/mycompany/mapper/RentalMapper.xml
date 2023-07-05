@@ -33,4 +33,17 @@
 	<select id="getTotalCount" resultType="int">
 		select count(*) from tbl_rental
 	</select>
+	
+	
+	<!-- history -->
+	<insert id="insertHistory">
+		insert into tbl_rental (isbn, booktitle, userid) values (#{isbn}, #{booktitle}, #{userid})
+		<selectKey keyProperty="isbn" resultType="Long" order="BEFORE">
+  			select isbn from tbl_book where booktitle = #{booktitle}
+		</selectKey> 
+	</insert>
+	
+	<select id="getState">
+		select state from tbl_rental where isbn = #{isbn}
+	</select>
 </mapper>

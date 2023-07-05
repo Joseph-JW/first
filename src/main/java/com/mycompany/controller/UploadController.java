@@ -40,7 +40,7 @@ public class UploadController {
 		String str = sdf.format(date);
 		return str.replace("-", File.separator);
 	}
-	
+
 	private boolean checkImageType(File file) {
 		try {
 			String contentType = Files.probeContentType(file.toPath());
@@ -50,19 +50,19 @@ public class UploadController {
 		}
 		return false;
 	}
-	
+
 	@PostMapping(value = "/uploadFileAjax", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<AttachFileDTO>> uploadFileAjax(MultipartFile[] uploadFile) {
 		List<AttachFileDTO> list = new ArrayList<>();
 		String uploadFolder = "C:\\upload";
-		
+
 		String uploadFolderPath = getFolder();
 		File uploadPath = new File(uploadFolder, uploadFolderPath);
-		
-		if(uploadPath.exists() == false) {
+
+		if(!uploadPath.exists()) {
 			uploadPath.mkdirs();
 		}
-		
+
 		for (MultipartFile multipartFile : uploadFile) {
 			AttachFileDTO attachDTO = new AttachFileDTO();
 			String uploadFileName = multipartFile.getOriginalFilename();
@@ -74,16 +74,16 @@ public class UploadController {
 			try {
 				File saveFile = new File(uploadPath, uploadFileName);
 				multipartFile.transferTo(saveFile);
-				
+
 				attachDTO.setUuid(uuid.toString());
 				attachDTO.setUploadpath(uploadFolderPath);
-				
+
 				if(checkImageType(saveFile)) {
 					attachDTO.setImage(true);
 					FileOutputStream thumbnail = new FileOutputStream(new File(uploadPath, "s_" + uploadFileName));
 					Thumbnailator.createThumbnail(multipartFile.getInputStream(), thumbnail, 100, 200);
 					thumbnail.close();
-				} 
+				}
 				list.add(attachDTO);
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -91,7 +91,7 @@ public class UploadController {
 		}	//end for
 		return new ResponseEntity<>(list, HttpStatus.OK);
 	}
-	
+
 	@GetMapping(value = "/display", produces = MediaType.IMAGE_JPEG_VALUE)
 	public ResponseEntity<byte[]> getFile(@RequestParam("filename") String filename) {
 		log.info("filename : " + filename);
@@ -107,12 +107,12 @@ public class UploadController {
 		}
 		return result;
 	}
-	
+
 	@DeleteMapping(value = "/deleteFile", consumes = "application/json")
 	public ResponseEntity<String> deleteFile(@RequestBody Map<String, String> param) {
 		String filename = param.get("filename");
 		String type = param.get("type");
-		
+
 		log.info("deletedFile : " + filename);
 		File file;
 		try {
@@ -128,8 +128,8 @@ public class UploadController {
 			e.printStackTrace();
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
-		return new ResponseEntity<String>("deleted", HttpStatus.OK);
+		return new ResponseEntity<>("deleted", HttpStatus.OK);
 	}
-	
-	
+
+
 }

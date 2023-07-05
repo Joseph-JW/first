@@ -325,6 +325,7 @@ $(function() {
                         <div class="needs">
                             <div id="sign_addr">
                                 <input type="text" name="postcode" id="postcode" placeholder="우편번호" disabled>
+                                <input type="hidden" name="postcode">
                                 <button type="button" onClick="searchAddress()" id="schAddr">주소 검색</button><br>
                                 <input type="text" id="sign_address" name="sign_address" placeholder="주소" disabled>
                                 <input type="text" id="detailAddress" id="detailAddress" placeholder="상세주소">

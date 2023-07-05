@@ -27,7 +27,7 @@ $(function() {
 	<div id="find_3">
 		<div id="find_id">
 		
-		<form method="post" action="/member/findId">
+		<form method="post" action="/member/findId" id="find_id_go">
 			<div id="find_id_top">
 				<div class="find_a">
 					<h2>아이디 찾기</h2>
@@ -45,24 +45,11 @@ $(function() {
 				<button type="submit">확인</button>
 				<button type="reset">취소</button>
 			</div>
-			
-			<c:if test="${check == 1}">
-				<script type="text/javascript">
-					opener.document.findform.name.value = "";				
-					opener.document.findform.phone.value = "";				
-				</script>
-				<label>일치하는 정보가 존재하지 않습니다</label>
-			</c:if>
-			<c:if test="${check == 0}">
-				<label>찾으시는 아이디는 '${userid }' 입니다</label>
-				<div>
-					<button type="button" value="확인"></button>
-					
-				</div>
-			</c:if>
-
+		
 		</form>
 		</div>
+		
+		
 
 	</div>
 

@@ -23,7 +23,7 @@
     String formattedFutureDate = dateFormat.format(futureDate);
 %>
 
-<title>도서</title>
+<title>도서 대여</title>
 
 <link rel="stylesheet" href="../resources/book/bookRental.css">
 
@@ -32,14 +32,22 @@
 <script type="text/javascript">
 
 $(function() {
-	let userid = "<c:out value="${auth.userid}" />";
-    
+	let userid = "<c:out value='${auth.userid}' />";
+	let message = "<c:out value='${message}' />";
+	
+	
 	$('#rental_btn').click(function(e) {
 		if (userid == "" || userid == null) {
 			e.preventDefault(); 
 			alert("로그인이 필요합니다. 로그인 후에 대출 신청해주세요.");
+		} else{
+
+			$("form").submit;
 		}
+		
 	});
+	
+	
 	
 });	//close
 
@@ -100,12 +108,15 @@ $(function() {
 							</td>
 	
 							<td><c:out value="${rental.state}" /></td>
+							
+							
 
 						</tr>
 				</tbody>
 			</table>
 		</div>
 		<div id="rental_con3">
+			<input type="hidden" name="state" value="<c:out value='${rental.state}' />">
 			<button type="submit" class="rental_button" id="rental_btn">대출신청</button>
 			
 		

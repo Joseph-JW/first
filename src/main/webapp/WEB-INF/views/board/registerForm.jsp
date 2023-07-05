@@ -94,17 +94,7 @@ $(document).ready(function() {
 			</div>
 		</div>
 	</div>
-	<div class="article-bottom">
-		<div class="field1 get-th field-style">
-			<label><b>첨부파일</b></label>
-		</div>
-		<div class="field2 get-td">
-			<input type="file" name="uploadFile" id="uploadFile" class="file-input" multiple/>
-		</div>
-		<div class="uploadResult">
-			<ul></ul>
-		</div>
-	</div>
+	
 </div>
 
 <%@ include file="../include/footer.jsp" %>

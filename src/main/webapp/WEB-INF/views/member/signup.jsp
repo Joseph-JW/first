@@ -47,17 +47,51 @@ $(function() {
 		memberService.getTimerIntervalConfirm($("#finished"));
 	});
 	
-	/* 가입버튼 */
-	$("#signup_button").on("click", function(e) {
-		e.preventDefault();
-		if (isValid()) {
-			$("form").submit();
-		} else {
-			alert("가입정보가 올바르지 않습니다.")
-		}
-	})
 	
-	function isValid() {
+	
+	// 주소
+	$("#sign_address, #detailAddress").on("input", function() {
+		  var signAddress = $("#sign_address").val();
+		  var detailAddress = $("#detailAddress").val();
+		  var combinedAddr = signAddress + " " + detailAddress;
+		  $("input[name='location']").val(combinedAddr);
+		});
+
+	
+	
+	// 이메일
+	$("#signup_email, #domain").on("input", updateEmailField);
+$("#mail-select").on("change", selectMail);
+
+function selectMail() {
+    let selectedMail = $('#mail-select').val();
+    if (selectedMail === 'custom') {
+        $('#domain').val('');
+    } else {
+        let selectedValue = $('#mail-select option:selected').text();
+        $('#domain').val(selectedValue);
+    }
+    updateEmailField();
+}
+
+function updateEmailField() {
+    var signupEmail = $("#signup_email").val();
+    var domain = $("#domain").val();
+
+    $("#email_tt").val(signupEmail + "@" + domain);
+}
+	  
+	  /* 가입버튼 */
+		$("#signup_button").on("click", function(e) {
+			e.preventDefault();
+			if (isValid()) {
+				$("form").submit();
+			} else {
+				alert("가입정보가 올바르지 않습니다.")
+			}
+		})
+		
+		function isValid() {
 		const userid = $("#signup_userid").val();
 		const password1 = $("#signup_userpw").val();
 		const password2 = $("#pwCk").val();
@@ -122,43 +156,6 @@ $(function() {
 		
 		return true;
 		}
-	
-	
-	// 주소
-	$("#sign_address, #detailAddress").on("input", function() {
-		  var signAddress = $("#sign_address").val();
-		  var detailAddress = $("#detailAddress").val();
-		  var combinedAddr = signAddress + " " + detailAddress;
-		  $("input[name='location']").val(combinedAddr);
-		});
-
-	
-	
-	// 이메일
-	$("#signup_email, #domain").on("input", updateEmailField);
-	  selectMail();
-	  function selectMail() {
-	    let selectedMail = $('#mail-select').val();
-	    if (selectedMail === 'custom') {
-	      $('#domain').val('');
-	    } else {
-	      let selectedValue = $('#mail-select option:selected').text();
-	      $('#domain').val(selectedValue);
-	    }
-	    updateEmailField();
-	  }
-	  
-	  $("#mail-select").on("change", function() {
-		    selectMail();
-		  });
-	  
-	  function updateEmailField() {
-		    var signupEmail = $("#signup_email").val();
-		    var domain = $("#domain").val();
-
-		    $("#email_tt").val(signupEmail + "@" + domain);
-		  }
-	  
 
 })	//close
 	
@@ -338,7 +335,7 @@ $(function() {
 								
                                 <input type='text' id="signup_email" name="email_addr"/>@<input type='text' id="domain" name="email_domain"/> 
                                 <input type='hidden' name='email' id="email_tt"/>
-                                <select onchange="selectMail()" id="mail-select">
+                                <select id="mail-select">
                                     <option value="custom">-직접입력</option>
                                     <option value="gmail">gmail.com</option>
                                     <option value="naver">naver.com</option>

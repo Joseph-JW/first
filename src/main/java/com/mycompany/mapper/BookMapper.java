@@ -14,6 +14,7 @@ public interface BookMapper {
 	public int getTotalCount();
 	public BookVO getIsbn(String booktitle);
 	public List<BookVO> getListDesc();
+	public boolean find(Long isbn);
 	
 	public List<BookVO> searchBooksByTitle(String title);
 	

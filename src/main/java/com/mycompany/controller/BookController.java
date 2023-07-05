@@ -1,12 +1,14 @@
 package com.mycompany.controller;
 
 
+import java.sql.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -91,14 +93,11 @@ public class BookController {
 	
 	@PostMapping("/rentalList")
 	public String rentalReturn(RentalVO rental, Model model) {
-		System.out.println("다다다" +rental.getState());
 		if(rental.getState().equals("대출중")) {
 			rental.setState("반납");
 			rentalService.modify(rental);
-			System.out.println("가가가");
 		} else {
 			rentalService.remove(rental.getBrcode());
-			System.out.println("나나나");
 		}
 		List<RentalVO> rentalList = rentalService.getList();
 	    model.addAttribute("rental", rentalList);

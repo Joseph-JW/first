@@ -77,9 +77,9 @@ $(function() {
                         <div id="cont3_in3">
                             <div id="cont3_in3_a">
                                 <ul>
-                                    <li>회원가입 ▶</li>
-                                    <li>아이디 찾기 ▶</li>
-                                    <li>비밀번호 찾기 ▶</li>
+                                    <li><a href="/member/signup">회원가입 ▶</a></li>
+                                    <li><a href="/member/findId">아이디 찾기 ▶</a></li>
+                                    <li><a href="/member/findPw">비밀번호 찾기 ▶</a></li>
                                 </ul>
                                 
                             </div><hr>

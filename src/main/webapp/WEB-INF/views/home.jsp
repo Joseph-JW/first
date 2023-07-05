@@ -18,7 +18,7 @@
     <title>홈화면</title>
 <script type="text/javascript">
 $(function() {
-	$(".get").on("click", function(e) {
+	$(".get").on("click", function(e) {18
 		e.preventDefault();	//.get(a태그) even 처리방지
 		let form = $('<form></form>');
 		form.attr("method", "get");
@@ -304,7 +304,7 @@ $(function() {
                                 <li>
                                     <div class="book">
                                         <a href="#">
-                                            <img src="../resources/images/book.png" alt="신간도서1" class="book_img">
+                                            <img src="../resources/images/book.png" alt="대출도서1" class="book_img">
                                             <div class="book_title">대출도서</div>
                                             <div class="book_wrier">저자</div>
                                         </a>
@@ -313,7 +313,7 @@ $(function() {
                                 <li>
                                     <div class="book">
                                     <a href="#">
-                                        <img src="../resources/images/book.png" alt="신간도서2" class="book_img">
+                                        <img src="../resources/images/book.png" alt="대출도서2" class="book_img">
                                         <div class="book_title">대출도서</div>
                                         <div class="book_wrier">저자</div>
                                     </a>
@@ -322,7 +322,7 @@ $(function() {
                                  <li>
                                     <div class="book">
                                         <a href="#">
-                                            <img src="../resources/images/book.png" alt="신간도서3" class="book_img">
+                                            <img src="../resources/images/book.png" alt="대출도서3" class="book_img">
                                             <div class="book_title">대출도서</div>
                                             <div class="book_wrier">저자</div>
                                         </a>
