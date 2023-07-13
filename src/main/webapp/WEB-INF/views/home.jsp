@@ -79,7 +79,9 @@ $(function() {
 	        maxSlides: 7,
 	        moveSlides: 1,
 	        slideWidth: 130,
-	        slideMargin: 10
+	        slideMargin: 10,
+	        speed: 1000, // 전환 애니메이션 속도 (밀리초)
+	        easing: 'ease-in-out'
 	    });
 
 })	//close

@@ -16,8 +16,8 @@
 	</select>
 	
 	<select id="getList" resultType="com.mycompany.domain.RentalVO">
-		select brcode, isbn, booktitle, userid, brdate, duedate, state 
-			from tbl_rental
+		select r.brcode, r.isbn, r.userid, r.brdate, r.duedate, r.state, b.booktitle 
+			from tbl_rental r join tbl_book b on r.isbn = b.isbn
 	</select>
 	
 	<update id="update">

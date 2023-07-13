@@ -11,7 +11,20 @@
  
 <script type="text/javascript">
 $(function() {
+	$('#find_id_go').on('submit', function(event) {
+        // 폼의 입력값을 가져옵니다.
+        var username = $('#username').val();
+        var phone = $('#phone').val();
 
+        // 입력값이 비어있는 경우 폼 제출을 중단합니다.
+        if (username === '' || phone === '') {
+            // "잘못된 접근입니다" 알림을 표시합니다.
+            alert('잘못된 접근입니다.');
+
+            // 폼 제출을 중단합니다.
+            event.preventDefault();
+        }
+    });
 	
 })
 

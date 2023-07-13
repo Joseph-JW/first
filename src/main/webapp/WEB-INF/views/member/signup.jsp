@@ -318,11 +318,13 @@ function updateEmailField() {
                         <div class="need">주소<span>*</span></div>
                         <div class="needs">
                             <div id="sign_addr">
-                                <input type="text" name="postcode" id="postcode" placeholder="우편번호" disabled>
-                                <input type="hidden" name="postcode" id="postcode" placeholder="우편번호">
+                                <input type="text" name="postcode" id="postcode" placeholder="우편번호" readonly="readonly">
+                                <input type="hidden" name="postcode" id="postcode">
                                 <button type="button" onClick="searchAddress()" id="schAddr">주소 검색</button><br>
-                                <input type="text" id="sign_address" name="sign_address" placeholder="주소" disabled>
+                                <input type="text" id="sign_address" name="sign_address" placeholder="주소" readonly="readonly">
+                                <input type="hidden" name="sign_address" id="sign_address">
                                 <input type="text" id="detailAddress" id="detailAddress" placeholder="상세주소">
+                                <input type="hidden" name="detailAddress" id="detailAddress">
                                 <input type="hidden" name="location">                               
                                 <div class="error" id="error__address"></div>
                             </div>
